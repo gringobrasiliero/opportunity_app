@@ -69,6 +69,7 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    diff-lcs (1.3)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23-x64-mingw32)
@@ -93,7 +94,6 @@ GEM
     nokogiri (1.8.2-x64-mingw32)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    psych (3.0.2-x64-mingw32)
     public_suffix (3.0.2)
     puma (3.11.3)
     rack (2.0.4)
@@ -129,6 +129,23 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rspec-core (3.7.1)
+      rspec-support (~> 3.7.0)
+    rspec-expectations (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-mocks (3.7.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.7.0)
+    rspec-rails (3.7.2)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
+      rspec-support (~> 3.7.0)
+    rspec-support (3.7.1)
     rubyzip (1.2.1)
     sass (3.5.6)
       sass-listen (~> 4.0.0)
@@ -181,15 +198,16 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
+  bcrypt
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   coffee-script-source (= 1.8.0)
   devise
   jbuilder (~> 2.5)
-  psych (= 3.0.2)
   puma (~> 3.7)
   rails (~> 5.1.6)
+  rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   sqlite3

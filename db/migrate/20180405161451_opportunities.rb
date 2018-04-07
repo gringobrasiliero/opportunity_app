@@ -4,6 +4,7 @@ class Opportunities < ActiveRecord::Migration[5.1]
       t.integer :category_id
       t.string :description
       t.string :title
-      
+
   end
+end
 end

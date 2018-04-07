@@ -17,4 +17,7 @@ def show
   @user = User.find(params[:id])
 end
 
+def destroy
+  session.delete
+end
 end
