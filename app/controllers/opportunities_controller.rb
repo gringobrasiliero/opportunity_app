@@ -1,19 +1,27 @@
 class OpportunitiesController < ApplicationController
 
 def index
-@opportunities = Opportuity.all
+  @opportunities = Opportunity.all
 end
 
 def show
-@Opportunity = Opportunity.find(opportunity_params)
+  @opportunity = Opportunity.find(params[:id])
 end
 
 def new
-@Opportunity = Opportunity.new(opportunity_params)
+  @opportunity = Opportunity.new
 end
 
+def create
+  @opportunity = Opportunity.new(opportunity_params)
+  @opportunity.save
+  redirect_to @opportunity
+end
 
+private
 
 def opportunity_params
   params.require(:opportunity).permit(:title, :description)
+end
+
 end
