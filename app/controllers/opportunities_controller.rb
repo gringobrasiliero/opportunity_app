@@ -13,8 +13,8 @@ def new
 end
 
 def create
-  @opportunity = Opportunity.new(opportunity_params)
-  @opportunity.save
+  @opportunity = Opportunity.create(opportunity_params)
+
   redirect_to @opportunity
 end
 

@@ -10,8 +10,8 @@ get '/auth/linkedin/callback' => 'sessions#create'
 
 resources :opportunities
 
-get 'profiles/:id/edit', to: 'profiles#edit', as: "edit_profile"
-put 'profiles/:id', to: 'profiles#update'
+# get 'profiles/:id/edit', to: 'profiles#edit', as: "edit_profile"
+# put 'profiles/:id', to: 'profiles#update'
 
 resources :profiles
 end
