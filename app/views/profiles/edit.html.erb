@@ -1,0 +1,26 @@
+<%= form_tag post_path(@profile), method: "put" do |f| %>
+
+<%= f.label :first_name %>
+<%= f.text_field :first_name, @profile.first_name %>
+
+<%= f.label :last_name %>
+<%= f.text_field :last_name, @profile.last_name %>
+
+<%= f.label :street_address %>
+<%= f.text_field :street_address, @profile.street_address %>
+
+<%= f.label :city %>
+<%= f.text_field :city, @profile.city %>
+
+<%= f.label :state %>
+<%= f.text_field :state, @profile.state %>
+
+<%= f.label :zip %>
+<%= f.text_field :zip, @profile.zip %>
+
+<%= f.label :phone_number %>
+<%= f.text_field :phone_number, @profile.phone_number %>
+
+<%= f.submit_tag "Update Profile" %>
+
+<% end %>

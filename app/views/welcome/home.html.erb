@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html>
 
-<% if session[:user_id] %>
-<h1> <%= @user.name %> </h1>
-<h2> <%= @user.email %> </h2>
-<img src="<%= @user.image %>">
-<% end %>
 
-
+  <%= link_to("Create Profile", 'profiles#new') %>
+  <%= link_to("Edit Profile", 'profiles#edit') %>
 
 <%= yield %>
 </html>
