@@ -9,7 +9,8 @@ Devise.setup do |config|
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'e57f878d60a477cbd4a8cd199549262fc94d937cb8a3e089e42c8d2af611045b69e2c53df6069367cb78549622b32639e3a821743ef3a569a5de76b4a366ba02'
-  
+require "omniauth-linkedin"
+    config.omniauth :linkedin, ENV['LINKEDIN_KEY'], ENV['LINKEDIN_SECRET']
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'

@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-
+before_action :require_login
 
   def create
     @profile = Profile.create(profile_params)
@@ -30,6 +30,10 @@ private
 
 def profile_params
   params.require(:profile).permit(:first_name, :last_name, :street_address, :city, :state, :zip, :phone_number)
+end
+
+def require_login
+  return head(:forbidden) unless session.include? :user_id
 end
 
 end

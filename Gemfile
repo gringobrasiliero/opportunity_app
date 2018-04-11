@@ -4,7 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-
+gem 'omniauth-oauth2', '~> 1.3.1'
 gem 'pry'
 gem 'omniauth'
 gem 'omniauth-linkedin'

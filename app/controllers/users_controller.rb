@@ -6,6 +6,7 @@ end
 
 
 def create
+
   @user = user.new(params[:id])
   if user.save
     session[:uid] = @user.id
