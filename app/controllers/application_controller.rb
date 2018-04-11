@@ -3,8 +3,13 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def current_user
+     return unless session[:uid]
+     @current_user ||= User.find(session[:uid])
+   end
+
   def logged_in?
-    !!session[:user_id]
+    !!session[:uid]
   end
 
 end

@@ -13,7 +13,8 @@ def new
 end
 
 def create
-  @opportunity = Opportunity.create(opportunity_params)
+
+  @opportunity = User.opportunities.create(opportunity_params)
 
   redirect_to @opportunity
 end
@@ -21,7 +22,7 @@ end
 private
 
 def opportunity_params
-  params.require(:opportunity).permit(:title, :description)
+  params.require(:opportunity).permit(:title, :description, :user_id)
 end
 
 end

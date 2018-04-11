@@ -7,16 +7,22 @@ def create
     u.image = auth['info']['image']
   end
 
-  session[:user_id] = @user.id
+  session[:uid] = @user.id
 
   render 'welcome/home'
 end
+
+def destroy
+  session.delete
+end
+
 
 private
 
 def auth
   request.env['omniauth.auth']
 end
+
 
 
 end
