@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
 
+def new
+end
+
+
 def create
 
   @user = User.find_or_create_by(uid: auth['uid']) do |u|
@@ -15,8 +19,8 @@ def create
   render 'welcome/home'
 end
 
-def new
-
+def destroy
+  session.delete :user_id
 end
 private
 
