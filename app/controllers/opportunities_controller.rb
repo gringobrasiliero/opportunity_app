@@ -14,7 +14,7 @@ end
 
 def create
 
-  @opportunity = current_user.opportunities.create(opportunity_params)
+  @opportunity = Opportunity.create(opportunity_params)
 
   redirect_to @opportunity
 end

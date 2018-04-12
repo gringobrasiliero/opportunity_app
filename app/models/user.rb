@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   validates :email, :presence => true
   validates :email, :uniqueness => true
-  has_secure_password
+
 
 
 
