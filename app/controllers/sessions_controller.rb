@@ -6,6 +6,7 @@ end
 
 def create
 
+  if auth = request.env["omniauth.auth"]
   @user = User.find_or_create_by(uid: auth['uid']) do |u|
      u.name = auth['info']['name']
     u.email = auth['info']['email-address']
@@ -14,13 +15,14 @@ def create
     u.image = auth['info']['picture-url']
   end
 
-  session[:user_id] = @user.id
+  session[:user_id] = @user.uid
 
   render 'welcome/home'
 end
 
 def destroy
-  session.delete :user_id
+  reset_session
+  redirect_to login_path
 end
 private
 
