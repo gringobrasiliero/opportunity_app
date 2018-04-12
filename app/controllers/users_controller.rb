@@ -5,14 +5,14 @@ def new
 end
 
 
-def create
-
-  @user = user.new(params[:id])
-  if user.save
-    session[:user_id] = @user.id
-    redirect to user_path(@user)
-  end
-end
+# def create
+#
+#   @user = user.new(params[:id])
+#   if user.save
+#     session[:user_id] = @user.id
+#     redirect to user_path(@user)
+#   end
+# end
 
 
 

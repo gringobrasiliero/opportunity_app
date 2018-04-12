@@ -1,5 +1,5 @@
 class ProfilesController < ApplicationController
-before_action :require_login
+
 
   def create
     @profile = Profile.create(profile_params)
