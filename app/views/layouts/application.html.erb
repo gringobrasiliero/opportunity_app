@@ -7,10 +7,10 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-
+      <%= link_to("Home", root_path) %>
       <%= link_to("Sign Up", new_user_registration_path) %>
       <%= link_to("Sign In", new_user_session_path) %>
-      <%= link_to('Log in with LinkedIn',  'users/auth/linkedin') %>
+      <%= link_to('Log in with LinkedIn',  user_linkedin_omniauth_authorize_path) %>
 
 
 

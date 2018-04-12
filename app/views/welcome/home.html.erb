@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html>
-
+<body>
 <%= link_to("Create Opportunity", 'opportunities/new') %>
 <%= link_to("Edit Opportunities", 'opportunities/edit') %>
   <%= link_to("Create Profile", 'profiles#new') %>
   <%= link_to("Edit Profile", 'profiles#edit') %>
+
+  <% if session[:user_id] %>
+    <h1><%= @user.first_name %></h1>
+    <h2>Email: <%= @user.email %></h2>
+    <h2>Linkedin UID: <%= @user.uid %></h2>
+
+  <% else %>
+    <%= link_to('Log in with Linkedin!', 'users/auth/linkedin') %>
+  <% end %>
+
+</body>
 
 <%= yield %>
 </html>
